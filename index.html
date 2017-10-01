@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+  <meta charset="utf-8" />
   <title>Kevin Viratyosin</title>
   <link rel='icon' type='image/png' href='./images/favicon.png'>
   <meta name='viewport' content='width=device-width; initial-scale=1.0; maximum-scale=1.0;'>
@@ -10,56 +11,95 @@
       margin: 0px;
       box-sizing: border-box;
       font-family: Helvetica;
-      font-size: 12px;
-    }
-
-    a {
-      color: #404844;
     }
 
     html, body {
       height: 100%;
       width: 100%;
+      background-color: #f8f8f8;
     }
 
     body {
-      padding: 12px;
+      padding: 24px;
     }
 
     #main_column {
       width: 100%;
-      max-width: 720px;
+      max-width: 512px;
       margin: auto;
     }
 
-    #main_column > *:first-child {
+    #main_column > div {
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+
+    #main_column > div:first-child {
       margin-top: 0px;
     }
 
-    #main_image {
-      width: 100%;
+    #main_column > div:last-child {
+      margin-bottom: 0px;
     }
 
-    .text_pane {
+    #header, #links {
+      text-align: center;
+    }
+
+    #links, #links > a {
+      color: #222;
+      font-size: 14px;
+    }
+
+    #porthole {
+      position: relative;
+    }
+
+    #porthole > #rotating_hello {
+      position: absolute;
+    }
+
+    #porthole_img {
       width: 100%;
-      background-color: #ddd;
-      padding: 12px;
-      margin-top: 12px;
-      margin-bottom: 12px;
+      border-radius: 50%;
+      padding: 10%;
+    }
+
+    #curve_text {
+      font-size: 4.8px;
+      font-family: Garamond;
+    }
+
+    .rotates {
+      -webkit-animation: rotation 30s infinite linear;
+    }
+
+    @-webkit-keyframes rotation {
+      from {
+        -webkit-transform: rotate(359deg);
+      }
+      to {
+        -webkit-transform: rotate(0deg);
+      }
     }
   </style>
 </head>
 <body>
   <div id="main_column">
-    <div class="text_pane">
-      <span>
-        Hi. My name is Kevin. I'm a computer scientist and software engineer. I like solving puzzles, learning languages, dancing, watches, and making photographs.
-      </span>
+    <div id="porthole">
+      <svg id="rotating_hello" class="rotates" viewBox="0 0 100 100">
+        <path id="curve" fill="rgba(0,0,0,0)" d="M 5.000,50.000 C 5.000,25.164 25.164,5.000 50.000,5.000 74.836,5.000 95.000,25.164 95.000,50.000 95.000,74.836 74.836,95.000 50.000,95.000 25.164,95.000 5.000,74.836 5.000,50.000 5.000,25.164" />
+        <text x="0%">
+          <textPath xlink:href="#curve" id="curve_text" method="align" charset="UTF-8" fill='#222'>
+            Hi. My name is Kevin. I'm a computer scientist and software engineer. I like solving puzzles, learning languages, dancing, and making things. ■
+          </textPath>
+        </text>
+      </svg>
+      <img id="porthole_img" src='./images/porthole.jpg'/>
     </div>
-    <img id="main_image" src="./images/background.jpg"/>
-    <div class="text_pane">
-      <a href="facebook.com/viratyosin">Facebook</a>,
-      <a href="instagram.com/viratyosin">Instagram</a>
+    <div id="links">
+      <a href="http://facebook.com/viratyosin">Facebook</a> ■
+      <a href="http://instagram.com/viratyosin">Instagram</a>
     </div>
   </div>
 </body>
