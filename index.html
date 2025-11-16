@@ -19,7 +19,8 @@
       padding: 0px;
       margin: 0px;
       box-sizing: border-box;
-      font-family: Helvetica;
+      font-family: monospace;
+      color: #333;
     }
 
     html, body {
@@ -48,7 +49,7 @@
     }
 
     #main_column > div:last-child {
-      margin-bottom: 0px;
+      padding-bottom: 24px
     }
 
     #header, #links {
@@ -60,52 +61,19 @@
       font-size: 14px;
     }
 
-    #porthole {
-      position: relative;
-    }
-
-    #porthole > #rotating_hello {
-      position: absolute;
-    }
-
-    #porthole_img {
+    #photo {
       width: 100%;
-      border-radius: 50%;
-      padding: 10%;
     }
 
-    #curve_text {
-      font-size: 4.8px;
-      font-family: Garamond;
-    }
-
-    .rotates {
-      -webkit-animation: rotation 30s infinite linear;
-    }
-
-    @-webkit-keyframes rotation {
-      from {
-        -webkit-transform: rotate(359deg);
-      }
-      to {
-        -webkit-transform: rotate(0deg);
-      }
+    #hello {
+      font-size: 20px;
     }
   </style>
 </head>
 <body>
   <div id="main_column">
-    <div id="porthole">
-      <svg id="rotating_hello" class="rotates" viewBox="0 0 100 100">
-        <path id="curve" fill="rgba(0,0,0,0)" d="M 5.000,50.000 C 5.000,25.164 25.164,5.000 50.000,5.000 74.836,5.000 95.000,25.164 95.000,50.000 95.000,74.836 74.836,95.000 50.000,95.000 25.164,95.000 5.000,74.836 5.000,50.000 5.000,25.164" />
-        <text x="0%">
-          <textPath xlink:href="#curve" id="curve_text" method="align" charset="UTF-8" fill='#222'>
-            Hi. My name is Kevin. I'm a computer scientist and software engineer. I like solving puzzles, learning languages, dancing, and making things. ■
-          </textPath>
-        </text>
-      </svg>
-      <img id="porthole_img" src='./images/porthole.jpg'/>
-    </div>
+    <div><img id="photo" src='./images/whitney.jpeg'/></div>
+    <div id="hello">Hi. My name is Kevin Viratyosin. In my free time, you might find me taking photos in the mountains or hanging from plastic rocks. In my paid time, I develop programming language features for Meta.</div>
     <div id="links">
       <a href="http://facebook.com/viratyosin">Facebook</a> ■
       <a href="http://instagram.com/viratyosin">Instagram</a>
